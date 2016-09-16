@@ -12,6 +12,6 @@ tar -xvf elasticsearch-5.0.0-alpha5.tar.gz
 
 ## Run Elastic
 ```
-cd elasticsearch-5.0.0-alpha5.tar.gz/bin
+cd elasticsearch-5.0.0-alpha5/bin
 ./elasticsearch
 ```
