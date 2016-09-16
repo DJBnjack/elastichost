@@ -1,5 +1,5 @@
-# elastichost
-Scripts to run on the elastichost
+# Elasticsearch
+Setup of Elasticsearch
 
 ## Install JAVA
 ```sudo apt-get install default-jre -y```
@@ -45,4 +45,24 @@ discovery.zen.minimum_master_nodes: 1
 ```
 cd elasticsearch-5.0.0-alpha5/bin
 ./elasticsearch
+```
+
+# Kibana
+Setup to run for Kibana
+
+## Download and unzip
+```
+curl -L -O https://download.elastic.co/kibana/kibana/kibana-5.0.0-alpha5-linux-x86_64.tar.gz
+tar -xvf kibana-5.0.0-alpha5-linux-x86_64.tar.gz
+```
+
+## Edit config to bind to 0.0.0.0
+```
+nano kibana-5.0.0-alpha5-linux-x86_64/config/kibana.yml
+```
+
+## Run Kibana
+```
+cd kibana-5.0.0-alpha5-linux-x86_64/bin/
+./kibana
 ```
