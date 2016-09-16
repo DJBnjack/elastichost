@@ -66,3 +66,36 @@ nano kibana-5.0.0-alpha5-linux-x86_64/config/kibana.yml
 cd kibana-5.0.0-alpha5-linux-x86_64/bin/
 ./kibana
 ```
+
+# Logstash
+
+## Download and unpack
+```
+curl -L -O https://download.elastic.co/logstash/logstash/logstash-5.0.0-alpha5.tar.gz
+tar -xvf logstash-5.0.0-alpha5.tar.gz
+```
+
+## Create logstash.conf
+```
+nano logstash.conf
+```
+Use this content:
+```
+input {
+  gelf {}
+}
+output {
+  elasticsearch {
+        host => "elasticsearch"
+        protocol => "http"
+        workers=> 10
+        }
+  stdout {
+}
+}
+```
+
+## Run Logstash
+```
+logstash-5.0.0-alpha5/bin/logstash agent -f logstash.conf
+```
