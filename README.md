@@ -33,7 +33,7 @@ nano elasticsearch-5.0.0-alpha5/config/elasticsearch.yml
 
 Set bind address to:
 ```
-0.0.0.0
+network.host: 0.0.0.0
 ```
 
 Set amount of master nodes:
