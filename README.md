@@ -85,13 +85,8 @@ input {
   gelf {}
 }
 output {
-  elasticsearch {
-        host => "elasticsearch"
-        protocol => "http"
-        workers=> 10
-        }
-  stdout {
-}
+  elasticsearch { }
+  stdout { }
 }
 ```
 
