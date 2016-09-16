@@ -6,12 +6,12 @@ Scripts to run on the elastichost
 
 ## Install Elastic
 ```
-curl -L -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/5.1.0/elasticsearch-5.1.0.tar.gz
-tar -xvf elasticsearch-5.1.0.tar.gz
+curl -L -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/5.0.0-alpha5/elasticsearch-5.0.0-alpha5.tar.gz
+tar -xvf elasticsearch-5.0.0-alpha5.tar.gz
 ```
 
 ## Run Elastic
 ```
-cd elasticsearch-5.1.0/bin
+cd elasticsearch-5.0.0-alpha5.tar.gz/bin
 ./elasticsearch
 ```
