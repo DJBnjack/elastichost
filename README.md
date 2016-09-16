@@ -97,5 +97,5 @@ output {
 
 ## Run Logstash
 ```
-logstash-5.0.0-alpha5/bin/logstash agent -f logstash.conf
+logstash-5.0.0-alpha5/bin/logstash -f logstash.conf
 ```
