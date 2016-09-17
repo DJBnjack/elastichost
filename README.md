@@ -1,6 +1,26 @@
 # Elasticsearch
 Setup of Elasticsearch
 
+# Docker
+## Setup Java options (yes, also for use with docker)
+```
+sudo sysctl -w vm.max_map_count=262144
+sudo sysctl -w fs.file-max=100000
+```
+
+## Clone this repo (for config)
+```
+git clone https://github.com/DJBnjack/elastichost.git
+```
+
+## Start Elasticsearch docker
+```
+docker run -d -p 9200:9200 -p 9300:9300 -v "$PWD/config":/usr/share/elasticsearch/config --name elastic elasticsearch:5
+```
+
+# Install
+When you want to install it to the base system
+
 ## Install JAVA
 ```sudo apt-get install default-jre -y```
 
