@@ -10,7 +10,12 @@ sudo sysctl -w fs.file-max=100000
 
 ## Start Elasticsearch docker
 ```
-docker run -d -p 9200:9200 -p 9300:9300 --name elastic djbnjack/elasticsearch
+docker run -d --name elastic djbnjack/elasticsearch
+```
+
+## Start Kibana docker
+```
+docker run --name kibana --link elastic:elasticsearch -p 5601:5601 -d kibana:5
 ```
 
 # Install
