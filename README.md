@@ -20,7 +20,7 @@ docker run --name kibana --link elastic:elasticsearch -p 5601:5601 -d kibana:5
 
 ## Start logstash (Gelf -> Elasticsearch)
 ```
-docker run -d -p 12201:12201/udp --name logstash --link elastic:elasticsearch logstash:5 -e 'input {gelf {}} output {elasticsearch { } stdout { }}'
+docker run -d -p 12201:12201/udp --name logstash --link elastic:elasticsearch logstash:5 -e 'input {gelf {}} output {elasticsearch { hosts=>"elasticsearch" } stdout { }}'
 ```
 
 # Install
