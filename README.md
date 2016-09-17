@@ -30,6 +30,7 @@ git clone https://github.com/DJBnjack/elastichost.git
 
 ## Start service
 ```
+cd elastichost
 docker-compose start
 ```
 
