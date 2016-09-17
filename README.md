@@ -18,6 +18,11 @@ docker run -d --name elastic djbnjack/elasticsearch
 docker run --name kibana --link elastic:elasticsearch -p 5601:5601 -d kibana:5
 ```
 
+## Start logstash (Gelf -> Elasticsearch)
+```
+docker run -d --name logstash --link elastic:elasticsearch logstash:5 -e 'input {gelf {}} output {elasticsearch { } stdout { }}'
+```
+
 # Install
 When you want to install it to the base system
 
