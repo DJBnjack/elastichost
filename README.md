@@ -1,13 +1,12 @@
 # Elasticsearch
 Setup of Elasticsearch
 
-# Docker
 ## Setup Java options (yes, also for use with docker)
 ```
 sudo sysctl -w vm.max_map_count=262144
 sudo sysctl -w fs.file-max=100000
 ```
-
+# Docker
 ## Start Elasticsearch docker
 ```
 docker run -d --name elastic djbnjack/elasticsearch
@@ -23,6 +22,18 @@ docker run --name kibana --link elastic:elasticsearch -p 5601:5601 -d kibana:5
 docker run -d -p 12201:12201/udp --name logstash --link elastic:elasticsearch logstash:5 -e 'input {gelf {}} output {elasticsearch { hosts=>"elasticsearch" } stdout { }}'
 ```
 
+# Docker-Compose
+## Clone this repository
+```
+git clone https://github.com/DJBnjack/elastichost.git
+```
+
+## Start service
+```
+docker-compose start
+```
+
+
 # Install
 When you want to install it to the base system
 
@@ -33,12 +44,6 @@ When you want to install it to the base system
 ```
 curl -L -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/5.0.0-alpha5/elasticsearch-5.0.0-alpha5.tar.gz
 tar -xvf elasticsearch-5.0.0-alpha5.tar.gz
-```
-
-## Setup Java options
-```
-sudo sysctl -w vm.max_map_count=262144
-sudo sysctl -w fs.file-max=100000
 ```
 
 ## Edit Elastic jvm config
