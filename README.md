@@ -8,14 +8,9 @@ sudo sysctl -w vm.max_map_count=262144
 sudo sysctl -w fs.file-max=100000
 ```
 
-## Clone this repo (for config)
-```
-git clone https://github.com/DJBnjack/elastichost.git
-```
-
 ## Start Elasticsearch docker
 ```
-docker run -d -p 9200:9200 -p 9300:9300 -v "$PWD/config":/usr/share/elasticsearch/config --name elastic elasticsearch:5
+docker run -d -p 9200:9200 -p 9300:9300 --name elastic djbnjack/elasticsearch
 ```
 
 # Install
