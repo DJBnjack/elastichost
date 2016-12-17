@@ -1,7 +1,9 @@
 version: '2'
 services:
   elastic:
-    image: djbnjack/elasticsearch
+    image: elasticsearch:5
+    ports:
+     - "9200:9200"
   kibana:
     image: kibana:5
     links:
